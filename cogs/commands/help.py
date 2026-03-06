@@ -51,7 +51,7 @@ class HelpLayout(ui.LayoutView):
         }
 
         extra_menu_classes = {
-            '_automod', '_antinuke', '_music', '_extra', '_fun', '_moderation', '_giveaway',
+            '_automod', '_antinuke', '_extra', '_fun', '_moderation', '_giveaway',
             '_leveling', '_ai', '_server', 'RoleplayHelp', 'VerificationHelp',
             '_tracking', '_logging', '_counting', '_Backup', '_crew', '_ignore'
         }
@@ -854,10 +854,6 @@ class HelpLayout(ui.LayoutView):
             self.container.add_item(ui.Separator())
             self.container.add_item(self.main_categories_select)
             self.container.add_item(self.extra_categories_select)
-            self.container.add_item(ui.Separator())
-            gif_gallery = ui.MediaGallery()
-            gif_gallery.add_item(media="https://cdn.discordapp.com/attachments/1414256332592254986/1427906981506715729/standard_1.gif")
-            self.container.add_item(gif_gallery)
             if not interaction.response.is_done():
                 await interaction.response.edit_message(view=self)
             else:
@@ -885,10 +881,7 @@ class HelpLayout(ui.LayoutView):
             self.container.add_item(ui.Separator())
             self.container.add_item(self.main_categories_select)
             self.container.add_item(self.extra_categories_select)
-            self.container.add_item(ui.Separator())
-            gif_gallery = ui.MediaGallery()
-            gif_gallery.add_item(media="https://cdn.discordapp.com/attachments/1414256332592254986/1427906981506715729/standard_1.gif")
-            self.container.add_item(gif_gallery)
+            if not interaction.response.is_done():
             if not interaction.response.is_done():
                 await interaction.response.edit_message(view=self)
             else:
@@ -940,10 +933,7 @@ class HelpLayout(ui.LayoutView):
             self.container.add_item(ui.Separator())
             self.container.add_item(self.main_categories_select)
             self.container.add_item(self.extra_categories_select)
-            self.container.add_item(ui.Separator())
-            gif_gallery = ui.MediaGallery()
-            gif_gallery.add_item(media="https://cdn.discordapp.com/attachments/1414256332592254986/1427906981506715729/standard_1.gif")
-            self.container.add_item(gif_gallery)
+            if not interaction.response.is_done():
             if not interaction.response.is_done():
                 await interaction.response.edit_message(view=self)
             else:
@@ -971,10 +961,7 @@ class HelpLayout(ui.LayoutView):
             self.container.add_item(ui.Separator())
             self.container.add_item(self.main_categories_select)
             self.container.add_item(self.extra_categories_select)
-            self.container.add_item(ui.Separator())
-            gif_gallery = ui.MediaGallery()
-            gif_gallery.add_item(media="https://cdn.discordapp.com/attachments/1414256332592254986/1427906981506715729/standard_1.gif")
-            self.container.add_item(gif_gallery)
+            if not interaction.response.is_done():
             if not interaction.response.is_done():
                 await interaction.response.edit_message(view=self)
             else:
@@ -1002,10 +989,7 @@ class HelpLayout(ui.LayoutView):
             self.container.add_item(ui.Separator())
             self.container.add_item(self.main_categories_select)
             self.container.add_item(self.extra_categories_select)
-            self.container.add_item(ui.Separator())
-            gif_gallery = ui.MediaGallery()
-            gif_gallery.add_item(media="https://cdn.discordapp.com/attachments/1414256332592254986/1427906981506715729/standard_1.gif")
-            self.container.add_item(gif_gallery)
+            if not interaction.response.is_done():
             if not interaction.response.is_done():
                 await interaction.response.edit_message(view=self)
             else:
@@ -1033,10 +1017,7 @@ class HelpLayout(ui.LayoutView):
             self.container.add_item(ui.Separator())
             self.container.add_item(self.main_categories_select)
             self.container.add_item(self.extra_categories_select)
-            self.container.add_item(ui.Separator())
-            gif_gallery = ui.MediaGallery()
-            gif_gallery.add_item(media="https://cdn.discordapp.com/attachments/1414256332592254986/1427906981506715729/standard_1.gif")
-            self.container.add_item(gif_gallery)
+            if not interaction.response.is_done():
             if not interaction.response.is_done():
                 await interaction.response.edit_message(view=self)
             else:

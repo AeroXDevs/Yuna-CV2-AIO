@@ -51,7 +51,7 @@ class HelpLayout(ui.LayoutView):
         }
 
         extra_menu_classes = {
-            '_automod', '_antinuke', '_music', '_extra', '_fun', '_moderation', '_giveaway',
+            '_automod', '_antinuke', '_extra', '_fun', '_moderation', '_giveaway',
             '_leveling', '_ai', '_server', 'RoleplayHelp', 'VerificationHelp',
             '_tracking', '_logging', '_counting', '_Backup', '_crew', '_ignore'
         }
@@ -590,11 +590,7 @@ class HelpLayout(ui.LayoutView):
             
             self.container.add_item(self.extra_categories_select)
 
-            self.container.add_item(ui.Separator())
-
-            gif_gallery = ui.MediaGallery()
-            gif_gallery.add_item(media="https://cdn.discordapp.com/attachments/1414256332592254986/1427906981506715729/standard_1.gif")
-            self.container.add_item(gif_gallery)
+            if not interaction.response.is_done():
 
             if not interaction.response.is_done():
                 await interaction.response.edit_message(view=self)
@@ -801,33 +797,6 @@ class HelpLayout(ui.LayoutView):
             if not interaction.response.is_done():
                 try:
                     await interaction.response.send_message("An error occurred while loading server content.", ephemeral=True)
-                except:
-                    pass
-
-    async def show_music_content(self, interaction: discord.Interaction):
-        """Show the music category content"""
-        try:
-            self.container.clear_items()
-            self.container.add_item(ui.TextDisplay("# Music Commands"))
-            self.container.add_item(ui.Separator())
-            commands_text = "`play`, `search`, `nowplaying`, `autoplay`, `loop`, `pause`, `resume`, `skip`, `shuffle`, `stop`, `volume`, `queue`, `clearqueue`, `replay`, `join`, `disconnect`, `seek`, `remove`, `move`, `lyrics`, `twentyfourseven`, `music play`, `music search`, `music nowplaying`, `music autoplay`, `music loop`, `music pause`, `music resume`, `music skip`, `music shuffle`, `music stop`, `music volume`, `music queue`, `music clearqueue`, `music replay`, `music join`, `music disconnect`, `music seek`, `music remove`, `music move`, `music lyrics`, `music twentyfourseven`"
-            self.container.add_item(ui.TextDisplay(commands_text))
-            self.container.add_item(ui.Separator())
-            self.container.add_item(self.main_categories_select)
-            self.container.add_item(self.extra_categories_select)
-            if not interaction.response.is_done():
-                await interaction.response.edit_message(view=self)
-            else:
-                await interaction.edit_original_response(view=self)
-        except discord.NotFound:
-            pass
-        except discord.InteractionResponded:
-            pass
-        except Exception as e:
-            logger.error("HELP", f"Error in show_music_content: {e}")
-            if not interaction.response.is_done():
-                try:
-                    await interaction.response.send_message("An error occurred while loading music content.", ephemeral=True)
                 except:
                     pass
 

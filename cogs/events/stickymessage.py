@@ -15,6 +15,23 @@ from utils.logger import logger
 class StickyMessageListener(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.bot.loop.create_task(self.setup_database())
+
+    async def setup_database(self):
+        async with aiosqlite.connect("db/stickymessages.db") as db:
+            await db.execute(
+                """CREATE TABLE IF NOT EXISTS sticky_messages (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    guild_id INTEGER,
+                    channel_id INTEGER,
+                    message_type TEXT,
+                    message_content TEXT,
+                    embed_data TEXT,
+                    enabled INTEGER DEFAULT 1,
+                    last_message_id INTEGER
+                )"""
+            )
+            await db.commit()
 
     @commands.Cog.listener()
     async def on_message(self, message):
