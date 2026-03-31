@@ -21,7 +21,6 @@ class Nightmode (commands .Cog ):
     def __init__ (self ,bot ):
         self .bot =bot 
         self .bot .loop .create_task (self .initialize_db ())
-        self .ricky =['767979794411028491',]
 
     async def initialize_db (self ):
         from db._db import Database
@@ -97,7 +96,7 @@ class Nightmode (commands .Cog ):
 
         own =ctx .author .id ==ctx .guild .owner_id 
         check =await self .is_extra_owner (ctx .author ,ctx .guild )
-        if not own and not check and ctx .author .id not in self .ricky :
+        if not own and not check :
             view = ui.LayoutView()
             container = ui.Container(accent_color=None)
             container.add_item(ui.TextDisplay("# <:icon_cross:1372375094336425986> Access Denied"))
@@ -108,7 +107,7 @@ class Nightmode (commands .Cog ):
 
         if not own and not (
         ctx .guild .me .top_role .position <=ctx .author .top_role .position 
-        )and ctx .author .id not in self .ricky :
+        ):
             view = ui.LayoutView()
             container = ui.Container(accent_color=None)
             container.add_item(ui.TextDisplay("# <:icon_danger:1373170993236803688> Access Denied"))
@@ -196,7 +195,7 @@ class Nightmode (commands .Cog ):
 
         own =ctx .author .id ==ctx .guild .owner_id 
         check =await self .is_extra_owner (ctx .author ,ctx .guild )
-        if not own and not check and ctx .author .id not in self .ricky :
+        if not own and not check :
             view = ui.LayoutView()
             container = ui.Container(accent_color=None)
             container.add_item(ui.TextDisplay("# <:icon_danger:1373170993236803688> Access Denied"))
@@ -207,7 +206,7 @@ class Nightmode (commands .Cog ):
 
         if not own and not (
         ctx .guild .me .top_role .position <=ctx .author .top_role .position 
-        )and ctx .author .id not in self .ricky :
+        ):
             view = ui.LayoutView()
             container = ui.Container(accent_color=None)
             container.add_item(ui.TextDisplay("# <:icon_danger:1373170993236803688> Access Denied"))
